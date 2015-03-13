@@ -1,0 +1,58 @@
+﻿<Window x:Class="TaxSolution.TSLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=TSLoginWindowTitle/@Header}" MinHeight="600" MinWidth="800" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/TaxSolution;component/taxsolution.ico" AllowsTransparency="False" WindowState="Maximized">
+    <Grid>
+        <DockPanel Name="topborderred" Style="{StaticResource TStopborderred}">
+            
+        </DockPanel>
+        <StackPanel Background="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,20,0,0">
+            <DockPanel Name="logocontainer" ToolTip="{Binding Source={StaticResource Lang}, XPath=ApplicationName/@Header}" Style="{StaticResource TSLogoContainerLogin}">
+                <Image Name="logo" Source="/TaxSolution;component/TAX-Solution-Logo.png" Style="{StaticResource TSLogoImageLogin}" />
+            </DockPanel>
+        
+            <DockPanel Name="loginform" Style="{StaticResource TSLoginFormContainer}">
+                <Border CornerRadius="10" Background="#9ACA3C" BorderBrush="#A7A9AC" BorderThickness="1" MinHeight="150" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Grid HorizontalAlignment="Center" Width="480">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <!--<Rectangle Fill="#9B9DA0" Grid.Row="0" Grid.Column="0" />
+                        <Rectangle Fill="#9B9DA0" Grid.Row="0" Grid.Column="1" />
+
+                        <Rectangle Fill="LightGoldenrodYellow" Grid.Row="1" Grid.Column="0" />
+                        <Rectangle Fill="LightGoldenrodYellow" Grid.Row="1" Grid.Column="1" />
+
+                        <Rectangle Fill="#9B9DA0" Grid.Row="2" Grid.Column="0" />
+                        <Rectangle Fill="#9B9DA0" Grid.Row="2" Grid.Column="1" />-->
+
+                        <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=TSLoginUserName/@Header}" Grid.Row="0" Grid.Column="0" Margin="12" HorizontalAlignment="Right" />
+                        <TextBox Name="loginname" Width="165" Height="25" Grid.Column="1" Margin="10,10,0,10" HorizontalAlignment="Left" BorderBrush="#A7A9AC" BorderThickness="2" />
+
+                        <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=TSLoginPassword/@Header}" Grid.Row="1" Grid.Column="0" Margin="12" HorizontalAlignment="Right" />
+                        <PasswordBox Name="loginpass" Width="165" Height="25" Grid.Row="1" Grid.Column="1" Margin="10,10,0,10" HorizontalAlignment="Left" BorderBrush="#A7A9AC" BorderThickness="2" />
+
+                        <Button Content="{Binding Source={StaticResource Lang}, XPath=TSLoginButton/@Header}" HorizontalAlignment="Left" Height="28" Name="loginBtn" Style="{StaticResource TSButtonStyleWhite}" Width="75" Click="loginBtn_Click" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" IsDefault="True" Margin="10,0,0,0" />
+                        <Button Content="{Binding Source={StaticResource Lang}, XPath=TSDashboardCloseButton/@Header}" HorizontalAlignment="Left" Height="28" Name="closeBtn" Style="{StaticResource TSButtonStyleWhite}" Width="75" Click="closeBtn_Click" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" IsDefault="True" Margin="100,0,0,0" />
+                    </Grid>
+                </Border>
+            </DockPanel>
+        </StackPanel>
+        <DockPanel Name="buttonsholder2" Style="{StaticResource TStopborderredbottom}">
+            <!--<Border BorderBrush="Silver" BorderThickness="1" Height="Auto" Name="border2" Width="Auto" HorizontalAlignment="Stretch">
+                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" >
+                    <TextBlock Text="Software developed by Mailmerge and Creash" Margin="0,0,10,0" />
+                </WrapPanel>
+            </Border>-->
+        </DockPanel>
+    </Grid>
+    <Window.Background>
+        <ImageBrush ImageSource="/TaxSolution;component/Images/background.png" />
+    </Window.Background>
+</Window>

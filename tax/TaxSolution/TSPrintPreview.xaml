@@ -1,0 +1,14 @@
+﻿<Window x:Class="TaxSolution.TSPrintPreview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=PrintPreviewTitle/@Header}" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" AllowsTransparency="False" WindowStyle="SingleBorderWindow" Style="{StaticResource TSFontStyle}" Icon="/TaxSolution;component/taxsolution.ico" WindowStartupLocation="CenterOwner" Height="600" Width="800" WindowState="Maximized" ResizeMode="CanMinimize" xmlns:myd="clr-namespace:TaxSolution" xmlns:my="clr-namespace:TaxSolution" ShowInTaskbar="False">
+    <Window.CommandBindings>
+        <CommandBinding Command="Print" Executed="CommandBinding_Executed"></CommandBinding>
+    </Window.CommandBindings>
+    <DocumentViewer Name="_viewer">
+        <DocumentViewer.CommandBindings>
+            <CommandBinding Command="Print" Executed="CommandBinding_Executed"></CommandBinding>
+        </DocumentViewer.CommandBindings>
+    </DocumentViewer>
+</Window>

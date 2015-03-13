@@ -1,0 +1,5 @@
+G:\Tax\Work\TaxSolution\AppLogic\bin\Release\AppLogic.dll
+G:\Tax\Work\TaxSolution\AppLogic\bin\Release\AppLogic.pdb
+G:\Tax\Work\TaxSolution\AppLogic\obj\Release\ResolveAssemblyReference.cache
+G:\Tax\Work\TaxSolution\AppLogic\obj\Release\AppLogic.dll
+G:\Tax\Work\TaxSolution\AppLogic\obj\Release\AppLogic.pdb

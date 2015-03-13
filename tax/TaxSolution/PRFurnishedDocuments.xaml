@@ -1,0 +1,76 @@
+﻿<Window x:Class="TaxSolution.PRFurnishedDocuments"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=PRFurnishedDocumentWindowTitle/@Header}" Height="600" Width="800" MinWidth="800" MinHeight="600" WindowStartupLocation="CenterOwner" WindowStyle="SingleBorderWindow" ResizeMode="CanMinimize" WindowState="Maximized" AllowsTransparency="False" xmlns:my="clr-namespace:TaxSolution" ShowInTaskbar="False" Background="#D1D3D4">
+    <Window.Resources>
+        <my:TaxDBDataSet x:Key="taxDBDataSet" />
+        <CollectionViewSource x:Key="customerViewSource" Source="{Binding Path=customer, Source={StaticResource taxDBDataSet}}" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <DockPanel Name="topborderred" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+            <DockPanel Name="logocontainer" ToolTip="{Binding Source={StaticResource Lang}, XPath=ApplicationName/@Header}" Style="{StaticResource TSLogoContainer}">
+                <Image Name="logo" Source="/TaxSolution;component/TAX-Solution-Logo.png" Style="{StaticResource TSLogoImage}" />
+                <Image Name="formimg" Source="/TaxSolution;component/Images/individual-return.png" Style="{StaticResource TSFormImage}" />
+            </DockPanel>
+            <DockPanel Name="topborderred2" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+        </StackPanel>
+        
+        <DockPanel Name="navigation" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource TSNavigationDock}">
+            <StackPanel>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="assesseeNav" Text="{Binding Source={StaticResource Lang}, XPath=PRAssesseeWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="salaryNav" Text="{Binding Source={StaticResource Lang}, XPath=PRSalaryWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="houseNav" Text="{Binding Source={StaticResource Lang}, XPath=PRHouseWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="investNav" Text="{Binding Source={StaticResource Lang}, XPath=PRInvestmentonTaxCredit/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="incomeNav" Text="{Binding Source={StaticResource Lang}, XPath=PRIncomeOfAssetsTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="it10bbNav" Text="{Binding Source={StaticResource Lang}, XPath=PRIT10-BBWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="it10bNav" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAndLiabilitiesWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItemActive}" Name="documentNav" Text="{Binding Source={StaticResource Lang}, XPath=PRFurnishedDocumentWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
+        </DockPanel>
+        <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAndLiabilitiesWindowTitle/@Header}" Style="{StaticResource TSFormTitle}" />
+        <WrapPanel Style="{StaticResource TSBodyTopNav}">
+            <Image Source="/TaxSolution;component/Images/previous.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="PrevBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/next.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="NextBtn_Click"/>
+        </WrapPanel>
+        <ScrollViewer  Style="{StaticResource TSBodyScroller}" Name="scrollViewer1">
+            <ScrollViewer.Background>
+                <ImageBrush ImageSource="/TaxSolution;component/Images/background.png" />
+            </ScrollViewer.Background>
+            <Grid MinHeight="400">
+                <TextBox Name="Doccount" Visibility="Hidden" IsEnabled="False" IsReadOnly="True" Text="0" />
+                <StackPanel Name="Docitems" HorizontalAlignment="Center">
+                    <WrapPanel Name="Doclabel" HorizontalAlignment="Center">
+                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRFurnishedDocumentDocument/@Header}" TextWrapping="Wrap"></TextBlock>
+                        <ComboBox HorizontalAlignment="Left" Name="documentCombo" Width="300" Height="28">
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName1/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName2/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName3/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName4/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName5/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName6/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName7/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName8/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName9/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName10/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName11/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName12/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName13/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName14/@Header}" />
+                            <ComboBoxItem Content="{Binding Source={StaticResource Lang}, XPath=PRDocName15/@Header}" />
+                        </ComboBox>
+                        <Button Name="BCDSaddbtn" Style="{StaticResource TSButtonStyle}" Content="{Binding Source={StaticResource Lang}, XPath=PRAssesseeAddRow/@Header}" Click="addRowBtn_Click" Height="30"></Button>
+                    </WrapPanel>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+        <WrapPanel Style="{StaticResource TSBodyBottomNav}">
+            <Image Source="/TaxSolution;component/Images/previous.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="PrevBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/next.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="NextBtn_Click"/>
+        </WrapPanel>
+        <DockPanel Name="buttonsholder2" Style="{StaticResource TStopborderredbottom}">
+        </DockPanel>
+    </Grid>
+</Window>

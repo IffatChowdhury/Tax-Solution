@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TaxSolution>
+  <ApplicationName Header="Tax Solution" />
+
+  <PrintPreviewTitle Header="Print Preview" />
+
+  <!-- Choose language window -->
+  <ChooseLanguageWindowTitle Header="Choose Language" />
+  <LanguageListGroupBox Header="Language" />
+  <StartAppButton Header="Start Application" />
+  <ExitButton Header="Exit" />
+  <PrintButton Header ="Print" />
+  <PreviewButton Header ="Preview and Print" />
+  <SaveButton Header ="Save" />
+  <BackupButton Header ="Backup Database" />
+
+  <!-- Dashboard -->
+  <TSDashboardWindowTitle Header="Dashboard" />
+  <TSDashboardTINButton Header ="TIN Application" />
+  <TSDashboardPersonalReturnButton Header ="Individual Return" />
+  <TSDashboardSettingsButton Header ="Settings" />
+  <TSDashboardNewUserButton Header ="New Client" />
+  <TSDashboardUserListButton Header ="Client List" />
+  <TSDashboardResourcesButton Header ="Resources" />
+  <TSDashboardAboutUsButton Header ="About Tax Solution" />
+  <TSDashboardCloseButton Header ="Close" />
+  <TSDashboardExitButton Header ="Exit" />
+
+  <!-- Personal Return Application -->
+  <!-- Assessee Information -->
+  <PRAssesseeWindowTitle Header="Assessee Information" />
+  <!-- Labels -->
+  <PRAssesseeAssesseeName Header="Assessee Name*:" />
+  <PRAssesseeNationalID Header="National ID:" />
+  <PRAssesseeUTIN Header="UTIN:" />
+  <PRAssesseeTIN Header="TIN*:" />
+  <PRAssesseeCircle Header="Circle*:" />
+  <PRAssesseeTaxesZone Header="Taxes Zone*:" />
+  <PRAssesseeAssessmentYear Header="Assessment Year*:" />
+  <PRAssesseeResidentialStatus Header="Residential Status*:" />
+  <PRAssesseeResident Header="Resident" />
+  <PRAssesseeNonResident Header="Non Resident" />
+  <PRAssesseeAssesseeStatus Header="Status*:" />
+  <PRAssesseeIndividual Header="Individual" />
+  <PRAssesseeFirm Header="Firm" />
+  <PRAssesseeAssociationOfPersons Header="Association of Persons" />
+  <PRAssesseeHinduUndividedFamily Header="Hindu Undivided Family" />
+  <PRAssesseeNameOfEmployer Header="Name of Employer/Business:" />
+  <PRAssesseeWifeOrHusbandsName Header="Wife/Husband's Name:" />
+  <PRAssesseeFathersName Header="Father's Name*:" />
+  <PRAssesseeMothersName Header="Mother's Name*:" />
+  <PRAssesseeDateOfBirth Header="Date Of Birth*:" />
+  <PRAssesseeAddressPresent Header="Address (a) Present*:" />
+  <PRAssesseeAddressPermanent Header="         (b) Permanent:" />
+  <PRAssesseeTelephoneOffice Header="Telephone Office/Business:" />
+  <PRAssesseeTelephoneResidential Header="Telephone Residential:" />
+  <PRAssesseeVatRegistrationNumber Header="VAT Registration Number:" />
+
+  <PRAssesseeSex Header="Sex*:" />
+  <PRAssesseeMale Header="Male" />
+  <PRAssesseeFemale Header="Female" />
+  <PRAssesseeDisabled Header="Disabled Person" />
+
+  <PRAssesseeContinue Header="Next" />
+  <PRAssesseePrevious Header="Back" />
+  <PRAssesseeSaveAndPrint Header="Save and Print" />
+  <PRAssesseeAddRow Header="Add Row" />
+
+  <PRReturnType Header="Return Type*:" />
+  <PRReturnTypeSelf Header="Self" />
+  <PRReturnTypeUniversalSelf Header="Universal Self" />
+  <PRReturnTypeNormal Header="Normal" />
+
+  <!-- Salary Information -->
+  <PRSalaryWindowTitle Header="Salary (Schedule-1)" />
+  <!-- Labels -->
+  <PRSalaryPayAndAllowance Header="Pay and Allowance" />
+  <PRSalaryAmountOfIncome Header="Amount Of Income" />
+  <PRSalaryAmountOfExemptedIncome Header="Amount Of Exempted Income" />
+  <PRSalaryNetTaxableIncome Header="Net Taxable Income" />
+
+  <PRSalaryActualHouseRent Header="Actual Rent:" />
+
+  <!-- Labels -->
+  <PRSalaryBasicPayTitle Header="1. Basic Pay" />
+  <PRSalarySpecialPayTitle Header="2. Special Pay" />
+  <PRSalaryAmountOfIncome Header="Amount Of Income" />
+  <PRSalaryAmountOfExemptedIncome Header="Amount Of Exempted Income" />
+  <PRSalaryNetTaxableIncome Header="Net Taxable Income" />
+  <PRSalaryDearnessAllowanceTitle Header="3. Dearness Allowance" />
+  <PRSalaryConveyanceAllowanceTitle Header="4. Conveyance Allowance" />
+  <PRSalaryHouseRentTitle Header="5. House Rent Allowance" />
+  <PRSalaryMedicalAllowanceTitle Header="6. Medical Allowance (Claim the medical expenditure in Exempted Income column)" />
+  <PRSalaryServantAllowanceTitle Header="7. Servant Allowance" />
+  <PRSalaryLeaveAllowanceTitle Header="8. Leave Allowance" />
+  <PRSalaryHonorariumRewardFeeTitle Header="9. Honorarium/Reward/Fee" />
+  <PRSalaryOvertimeAllowanceTitle Header="10. Overtime Allowance" />
+  <PRSalaryBonusTitle Header="11. Bonus/Ex-gratia" />
+  <PRSalaryOtherAllowanceTitle Header="12. Other Allowances" />
+  <PRSalaryProvidientFundTitle Header="13. Employer's Contribution to Recognized Providient Fund" />
+  <PRSalaryInterestOnProvidientFundTitle Header="14. Interest Accured on Recognized Providient Fund" />
+  <PRSalaryDeemedIncomeForTransportTitle Header="15. Deemed Income for Transport Facility" />
+  <!-- Labels -->
+  <PRSalaryCheckbox Header="Transport Supplied by Employer" />
+  <PRSalaryDeemedIncomeForFreeAccomodationTitle Header="16. Deemed Income for Free Furnished/Unfurnished Accomodation Information" />
+  <PRSalaryOtherTitle Header="17. Other (if any)" />
+  <PRSalaryNetTaxableIncomeFromSalary Header="Net Taxable Income From Salary" />
+  <PRSalaryAccommodationType1 Header="No Accommodation Provided" />
+  <PRSalaryAccommodationType2 Header="Full Free Accommodation" />
+  <PRSalaryAccommodationType3 Header="Partial Free Accommodation" />
+  <PRSalaryAccommodationType4 Header="Accommodation as Government Employee" />
+  <PRSalaryAccommodationType5 Header="Accommodation as Member of Militery" />
+  <PRSalaryPentionTitle Header="18. Pension" />
+  <PRSalaryLeaveTitle Header="19. Leave Encashment" />
+
+  <!-- House Rent Information -->
+  <PRHouseWindowTitle Header="House Property (Schedule-2)" />
+
+  <PRHouseRentalStatus Header="Rental Status" />
+  <PRHouseResidential Header="Residential" />
+  <PRHouseCommercial Header="Commercial" />
+  <PRHouseParticulars Header="Particulars" />
+  <PRHouseTk Header="Tk." />
+  <PRHouseLocationOfProperty Header="Location and description Of Property" />
+  <PRHouseAnnualRentalIncome Header="1. Annual Rental Income" />
+  <PRHouseClaimedExpence Header="2. Claimed Expence" />
+  <PRHouseRepare Header="Repare, Collection etc.:" />
+  <PRHouseMunicipalTax Header="Municipal or Local Tax:" />
+  <PRHouseLandRevenue Header="Land Revenue:" />
+  <PRHouseInterestOnLoan Header="Interest on Loan/Mortgage/Capital Charge:" />
+  <PRHouseInsurancePremium Header="Insurance Premium:" />
+  <PRHouseVacancyAllowance Header="Vacancy Allowance:" />
+  <PRHouseOther Header="Other" />
+  <PRHouseTotal Header="Total" />
+  <PRHouseNetIncome Header="3. Net Income (difference between item 1 and 2)" />
+
+
+
+  <!-- Investmenr, Tax Credit-->
+  <PRInvestmentonTaxCredit Header="Investment (Schedule-3)" />
+  <!-- Labels -->
+  <PRInvestmentonTaxCreditLifeParticulars Header="Particulars" />
+  <PRInvestmentonTaxCreditLifeAmount Header="Amount in Tk" />
+  <PRInvestmentonTaxCreditLifeInsurence Header="1. Life insurance premium" />
+  <PRInvestmentonTaxCreditContributionToDifferedAnnuity Header="2. Contribution to differed annuity" />
+  <PRInvestmentonTaxCreditContributionToProvidentFund Header="3. Contribution to provident fund to which provident fund act, 1925 applies" />
+  <PRInvestmentonTaxCreditSelfContribution Header="4. Self contribution and employer's contribution to recognized providient fund" />
+  <PRInvestmentonTaxCreditContributionToSuperAnnuationFund Header="5. Contribution to super annuation fund" />
+  <PRInvestmentonTaxCreditInvestmentInStocks Header="6. Investment in approved debenture or debenture stocks, stock or shares" />
+  <PRInvestmentonTaxCreditContributionToDepositPensionScheme Header="7. Contribution to deposit pension scheme" />
+  <PRInvestmentonTaxCreditContributionToFundAndGroupInsurance Header="8. Contribution to benevolent fund and group insurance premium" />
+  <PRInvestmentonTaxCreditContributionToZakatFund Header="9. Contribution to zakat fund" />
+  <PRInvestmentonTaxCreditOthers Header="10. Others, if any" />
+  <PRInvestmentonTaxCreditTotal Header="Total:" />
+
+
+  <!-- Investmenr, Tax Credit-->
+  <PRFurnishedDocumentWindowTitle Header="List of Documents Furnished" />
+  <!-- Labels -->
+  <PRFurnishedDocumentDocument Header="Documents" />
+  <PRDocName1 Header="Salary Certificate/Statement" />
+  <PRDocName2 Header="Bank Statement/Certificate" />
+  <PRDocName3 Header="Dividend Warrant(s)" />
+  <PRDocName4 Header="Loan Statement/Certificate" />
+  <PRDocName5 Header="Land Revenue receipt" />
+  <PRDocName6 Header="Municipal Tax receipt" />
+  <PRDocName7 Header="Vehicle Registration Certificate" />
+  <PRDocName8 Header="Land/Flat Registration deed" />
+  <PRDocName9 Header="Rental agreement" />
+  <PRDocName10 Header="Life Insurance premium payment receipt" />
+  <PRDocName11 Header="DPS payment receipt" />
+  <PRDocName12 Header="Evidence of deduction at source" />
+  <PRDocName13 Header="BO account statement" />
+  <PRDocName14 Header="Copy of challan/ pay order in support of tax payment" />
+  <PRDocName15 Header="Others" />
+
+
+  <!-- StatementUnderSection75 -->
+  <PRIT10-BBWindowTitle Header="IT-10BB" />
+  <PRIT10-BBPersonalAndFoodingExpence Header="Personal And Fooding Expence Information" />
+  <!-- Labels -->
+  <PRIT10-BBAmount Header="Amount of Tk." />
+  <PRIT10-BBComment Header="Comment" />
+  <PRIT10-BBTaxPaidIncludingDeduction Header="Tax paid including deduction at source of the last functional year" />
+  <PRIT10-BBAccomodationExpence Header="Accomodation Expence Information" />
+  <PRIT10-BBTransportExpence Header="Transport Expence Information" />
+  <PRIT10-BBElectronicBill Header="Electronic bill for residence" />
+  <PRIT10-BBWasaBill Header="Wasa bill for residence" />
+  <PRIT10-BBGasBill Header="Gas bill for residence" />
+  <PRIT10-BBTelephoneBill Header="Telephone bill for residence" />
+  <PRIT10-BBEducationalExpence Header="Educational expence for Children" />
+  <PRIT10-BBPersonalExpenceForForaignTravel Header="Personal expence for foraign travel" />
+  <PRIT10-BBFastivalExpence Header="Fastival and other special expenses " />
+  <PRIT10-BBTotalExpenditure Header="Total Expenditure" />
+
+
+  <!-- Assets and Liability -->
+  <PRAssetsAndLiabilitiesWindowTitle Header="IT-10B" />
+  <PRAssetsBusinessCapitalDirectorsShareholdingsTitle Header="Business Capital and Directors Shareholdings" />
+  <PRAssetsNonAgriculturalPropertyTitle Header="Non-Agricaltural Property" />
+  <PRAssetsAgriculturalPropertyTitle Header="Agricaltural Property" />
+  <PRAssetsInvestmentsTitle Header="Investments" />
+  <PRAssetsMotorVehiclesTitle Header="Motor Vehicles" />
+  <PRAssetsJewelleryTitle Header="Jewellery" />
+  <PRAssetsFurnitureTitle Header="Furniture" />
+  <PRAssetsElectronicTitle Header="Electronic Equipment(at cost)" />
+  <PRAssetsCashTitle Header="Cash asset Outside Business" />
+  <PRAssetsAnyOtherTitle Header="Any other assets" />
+  <PRAssetsLessLiabilitiesTitle Header="Less Liabilities" />
+  <PRAssetsNetWealthTitle Header="Net wealth as on last date of previous income year" />
+  <PRAssetsFamiltyExpenditureTitle Header="Family Expenditure" />
+  <PRAssetsSourceOfFundTitle Header="Source of Fund" />
+
+  <!-- Labels -->
+
+  <PRIncomeOfAssetsTaxDeducted Header="Tax deducted/collected at source"/>
+  <PRIncomeOfAssetsAdvanceTax Header="Advance Tax u/s 64/68"/>
+  <PRIncomeOfAssetsTaxPaidOnTheBasisOfThisReturn Header="Tax paid on the basis of this return"/>
+  <PRIncomeOfAssetsAdjustmentOfTaxRefund Header="Adjustment Of Tax Refund"/>
+  <PRIncomeOfAssetsTotalABCD Header="Total(a),(b),(c)and(d)"/>
+
+  <PRAssetsBusinessCapital Header="Business Capital" />
+  <PRAssetsDirectorsShareholdingsInLimitedCompanies Header="Directors Shareholdings in Limited Companies (at cost)" />
+  <PRAssetsNameofCompanies Header="Name of Companies" />
+  <PRAssetsNumberofShares Header="Number of shares" />
+
+  <PRAssetsNonAgriculturalProperty Header="Non-Agricaltural Property (at cost with legal expenses)" />
+  <PRAssetsNonAgriculturalLand Header="Land/House Property (Description and location of property)" />
+  <PRAssetsAmount Header="Amount" />
+
+
+  <PRAssetsAgriculturalProperty Header="Agricaltural Property (at cost with legal expenses)" />
+  <PRAssetsAgriculturalLand Header="Land(Total land and location of land property)" />
+  <PRAssetsShares Header="Shares/Debentures" />
+  <PRAssetsSavingCertificate Header="Saving Certificate/Unit Certificate/Bond" />
+  <PRAssetsPrizeBond Header="Prize bond/Savings Scheme" />
+  <PRAssetsLoansGiven Header="Loans given" />
+
+  <PRAssetsOtherInvestment Header="Other Investment" />
+  <PRAssetsMotorVehiclesTitle Header="Motor Vehicles (at cost)" />
+  <PRAssetsTypeOfMotor Header="Type of motor vehicle and Registration number" />
+  <PRAssetsJewellery Header="Jewellery Description" />
+  <PRAssetsJewelleryCost Header = "Cost" />
+  <PRAssetsFurniture Header="Furniture (at cost)" />
+  <PRAssetsElectronic Header="Electronic Equipment(at cost)" />
+
+  <PRAssetsCashInHand Header="Cash in hand" />
+  <PRAssetsCashInBank Header="Cash in bank" />
+  <PRAssetsOtherDeposits Header="Other deposits" />
+
+  <PRAssetsAnyOtherTotal Header="Total" />
+  <PRAssetsAnyOtherDetail Header="Detail" />
+
+  <PRAssetsMortgages Header="Mortgages secured on property or land" />
+  <PRAssetsUnsecuredLoans Header="Unsecured loans" />
+  <PRAssetsBankLoan Header="Bank loan" />
+  <PRAssetsOthers Header="Others" />
+  <PRAssetsNetWealth Header="Net wealth as on last date of previous income year" />
+
+  <PRAssetsFamiltyExpenditure Header="Family Expenditure (Total expenditure as per Form IT 10 BB)" />
+  <PRAssetsNoOfChildren Header="Number of dependant children of the family" />
+  <PRAssetsAdult Header="Adult" />
+  <PRAssetsChild Header="Child" />
+
+  <PRAssetsShownReturnIncome Header="Shown Return Income" />
+  <PRAssetsTaxExempted Header="Tax exempted/Tax free Income" />
+  <PRAssetsOtherReceipts Header="Other receipts" />
+
+  <!-- Income Of Assets -->
+  <PRIncomeOfAssetsTitle Header="Income Statement" />
+
+  <PRIncomeOfAssetsYearEnd Header="Income year ended on*: " />
+  <PRIncomeOfAssetsHeadsOfIncome Header="Heads of income" />
+  <PRIncomeOfAssetsAmountInTaka Header="Amount in taka" />
+  <PRIncomeOfAssetsSalaries Header="1. Salaries (as per schedule 1) u/s 21" />
+  <PRIncomeOfAssetsInterestOnSecurities Header="2. Interest on securities u/s 22" />
+  <PRIncomeOfAssetsIncomeFromHouseProperty Header="3. Income from House Property (as per schedule 2) u/s 24" />
+  <PRIncomeOfAssetsAgriculturalIncome Header="4. Agricultural Income u/s 26" />
+  <PRIncomeOfAssetsIncomeFromBusiness Header="5. Income from business or profession u/s 28" />
+  <PRIncomeOfAssetsShareOfProfit Header="6. Share of profit in firms" />
+  <PRIncomeOfAssetsIncomeOfSpouse Header="7. Income of spouse or minor child as applicable u/s 43(4)" />
+  <PRIncomeOfAssetsCapitalGains Header="8. Capital Gains u/s 31" />
+  <PRIncomeOfAssetsIncomeFromOtherSource Header="9. Income From Other Source u/s 33" />
+  <PRIncomeOfAssetsTotal Header="10. Total (Serial 1 to 9)" />
+  <PRIncomeOfAssetsForeignIncome Header="11. Foreign Income" />
+  <PRIncomeOfAssetsTotalIncome Header="12. Total Income (Serial 10 to 11)"/>
+  <PRIncomeOfAssetsTaxOnTotalIncome Header="13. Tax leviable on total income"/>
+  <PRIncomeOfAssetsTaxRebate Header="14. Tax Rebate u/s 44(2)(b) (as per schedule-3)"/>
+  <PRIncomeOfAssetsTaxPayable Header="15. Tax Payable (difference between 13 and 14)"/>
+  <!--Expender -->
+  <PRIncomeOfAssetsTaxPayment Header="16. Tax Payment"/>
+
+
+  <PRIncomeOfAssetsDifferenceBetween15-16 Header="17. Difference Between 15 and 16"/>
+  <PRIncomeOfAssetsTaxExempted Header="18. Tax Exempted and tax free income"/>
+  <PRIncomeOfAssetsIncometaxPaidInLastYear Header="19. Income tax paid in last assesment year"/>
+
+  <!-- Application form for TIN-->
+  <AFTaxpayerIndentificationNumberTitle Header="Application form for Taxpayer's Identification Number" />
+  <AFPersonalInfoTitle Header="Personal information" />
+  <AFNameAndTinTitle Header="3. Name and TIN" />
+  <AFIncorporationTitle Header="Incorporation/Registration" />
+  <AFCurrentAddressTitle Header="6.(a) Current address" />
+  <AFTelephoneTitle Header="6.(b) Telephone and Email" />
+  <AFPermanentAddressTitle Header="6.(c) Permanent address" />
+  <AFOtherAddressTitle Header="6.(d) Other address" />
+  <AFVATTitle Header="VAT" />
+  <AFInformationTitle Header="8. Information regarding payment of tax" />
+  <AFNationalIDTitle Header="9. National ID" />
+  <!-- Labels-->
+  <AFName Header="1. Name of the assessee" />
+  <AFFatherName Header="2.(a) Father's Name (In case of individual)" />
+  <AFMotherName Header="2.(b) Mother's Name (In case of individual)" />
+  <AFDateOfBirth Header="2.(c) Date of birth (In case of individual)" />
+  <AFHusbandName Header="2.(d) Name of the Husband (Whereever applicable, In case of individual)" />
+
+  <AFBusiness Header="(a) Business (in case of sole proprietorship)" />
+  <AFPartners Header="(b) Partners (in case of a firm)" />
+  <AFDirectors Header="(c) Directors (in case of a company)" />
+  <AFOther Header="(Wherever applicable, if needed separate sheet may be attached)" />
+  <AFOtherName Header="Name" />
+  <AFOtherTin Header="TIN" />
+
+  <AFIncorporationNo Header="4. Incorporation No./Registration No. (Wherever applicable)" />
+  <AFIncorporationDate Header="5. Incorporation/Registration Date (Wherever applicable)" />
+  <AFCurrentAddress Header="Address" />
+  <AFCurrentDistrict Header="District" />
+  <AFCurrentPostCode Header="Post Code" />
+
+  <AFTelephoneNumber Header="Telephone Number" />
+  <AFFaxNumber Header="Fax Number" />
+  <AFEmailAddress Header="Email Address" />
+
+  <AFPermanentAddress Header="Address" />
+  <AFPermanentDistrict Header="District" />
+  <AFPermanentPostCode Header="Post Code" />
+
+  <AFOtherAddress Header="Other Address (Business/Factory/Professional)" />
+  <AFOtherDistrict Header="District" />
+  <AFOtherPostCode Header="Post Code" />
+  <AFVATRegistrationNo Header="7. VAT Registration No. (Wherever applicable)" />
+  <AFVATNo Header="VAT No" />
+  <AFChallan Header="Challan or pay order number" />
+  <AFChallanDate Header="Date" />
+  <AFNameBank Header="Name of the Bank" />
+  <AFNameBranch Header="Name of the Branch" />
+  <AFNationalID Header="National ID Number (if any)" />
+
+  <AFSameAsPresentAddress Header="Same as Current Address" />
+
+  <!-- Client List -->
+  <TSClientListWindowTitle Header="Client List" />
+
+  <TSClientListSearch Header="Search" />
+  <TSClientListName Header="Name" />
+  <TSClientListFatherName Header="Father's Name" />
+  <TSClientListDOB Header="Date of Birth" />
+  <TSClientListTin Header="TIN" />
+
+  <!-- Return Summary -->
+  <PRSummaryTitle Header="Return Summary" />
+
+  <!-- Print TIN -->
+  <TinPrintWindowTitle Header="Print TIN Application" />
+
+  <!-- Print Personal Return -->
+  <PRPrintWindowTitle Header="Print Personal Return" />
+  <PRTaxComputation Header="Print Tax Computation" />
+  <PRSaveDesktop Header="Save to Computer" />
+  
+  <!-- Login Window -->
+  <TSLoginWindowTitle Header="Login" />
+  <TSLoginUserName Header="Login Name:" />
+  <TSLoginPassword Header="Password:" />
+  <TSLoginButton Header="Login" />
+
+  <!-- Settings Window -->
+  <TSSettingsWindowTitle Header="Settings" />
+  <TSSettingsLicenseStatus Header="License Status" />
+  <TSSettingsLicenseKey Header="License Key" />
+  <TSSettingsAdminPass Header="Administrator Password" />
+  <TSSettingsSuperAdminPass Header="Super Administrator Password" />
+  <TSSettingsActivationKey Header="Activation Key" />
+
+  <!-- Company Return -->
+  <CRBasicInfoWindowTitle Header="Basic Information" />
+  <CRBasicInfoIncome Header="Statement of income" />
+  <CRBasicInfoIncomeTax Header="Income tax payments" />
+  <CRBasicInfoParticulars Header="Particulars of Income/Expenses" />
+  <CRBasicInfoParticularsBalance Header="Particulars of balance sheet" />
+  <CRBasicInfoParticularsShare Header="Particulars of Shareholder directors" />
+  <CRBasicInfoWithholding Header="Statement of Withholding taxes" />
+  <CRBasicInfoParticularBank Header="Particulars of Bank Accounts" />
+  <CRBasicInfoParticularsOfRelated Header="Particulars of Related Parties/Subsidiary and Associated Companies/Directors/managers" />
+  <CRBasicInfoCompanyName Header="Name of company*:" />
+  <CRBasicInfoCompanyType Header="Type of company:"/>
+  <CRBasicInfoPublicType Header="Public Ltd."/>
+  <CRBasicInfoPrivateType Header="Private Ltd."/>
+  <CRBasicInfoLocalType Header="Local Authority."/>
+  <CRBasicInfoOthersType Header="Others."/>
+  <CRBasicInfoUTIN Header="UTIN (if any)" />
+  <CRBasicInfoTIN Header="TIN*" />
+  <CRBasicInfoIncomeYear Header="Income Year Ending on*"/>
+  <CRBasicInfoAddress Header="Address"/>
+  <CRBasicInfoIncorporation Header="Incorporation No"/>
+  <CRBasicInfoDate Header="Date:"/>
+  <CRBasicInfoCircle Header="Circle*:"/>
+  <CRBasicInfoTaxZone Header="Tax Zone*:" />
+  <CRBasicInfoResidentialStatus Header="Residential Status*:"/>
+  <CRBasicInfoResident Header="Resident" />
+  <CRBasicInfoNonResident Header="Non-Resident" />
+  <CRBasicInfoTeleOffice Header="Telephone: Office"/>
+  <CRBasicInfoFax Header="Fax No" />
+  <CRBasicInfoEmail Header="E-mail address"/>
+  <CRBasicInfoContactName Header="Contact person: (a)Name"/>
+  <CRBasicInfoContactDesignation Header="(b)Designation" />
+  <CRBasicInfoContactTele Header="(c)Telephone:" />
+  <CRBasicInfoBusinessIden Header="Business Identification Number (BIN), if any" />
+  <CRStatementOfIncomeWindowTitle Header="Statement of income of the Company"/>
+  <CRStatementOfIncomeLine Header="Line"/>
+  <CRStatementOfIncomeParticulars Header="Particulars of income"/>
+  <CRStatementOfIncomeTaxable Header="Taxable income"/>
+  <CRStatementOfIncomeExempted Header="Exempted/Tax Holiday income"/>
+  <CRStatementOfIncomeTotal Header="Total income"/>
+  <CRStatementOfIncomeFirstRow Header="2.13" />
+  <CRStatementOfIncomeSecondRow Header="2.14" />
+  <CRStatementOfIncomeThirdRow Header="2.15" />
+  <CRStatementOfIncomeFourthRow Header="2.16" />
+  <CRStatementOfIncomeFifthRow Header="2.17" />
+  <CRStatementOfIncomeSixthRow Header="2.18" />
+  <CRStatementOfIncomeSeventhRow Header="2.19" />
+  <CRStatementOfIncomeFromBusiness Header="Income from business or prefession, u/s 28"/>
+  <CRStatmentOfIncomeGain Header="Capital gain income, u/s 31"/>
+  <CRStatementOfIncomeSecurity Header="Interest of securities, u/s 22"/>
+  <CRStatementOfIncomeHouse Header="Income from house property, u/s 24"/>
+  <CRStatementOfIncomeAgri Header="Agricultural income,u/s 26"/>
+  <CRStatementOfIncomeOther Header="Income from other sources, u/s 33"/>
+  <CRStatementOfIncomeTotal1 Header="(Line 2.13+2.14+2.15+2.16+2.17+2.18+2.19)"/>
+  <CRTaxPayment Header="Income tax paymets of the Company"/>
+  <CRTaxPaymentParticulars Header="Particulars"/>
+  <CRTaxPaymentAmount Header="Amount in taka"/>
+  <CRTaxPaymentFirstRow Header="2.20"/>
+  <CRTaxPaymentSecondRow Header="2.21"/>
+  <CRTaxPaymentThirdRow Header="2.22"/>
+  <CRTaxPaymentFourthRow Header="2.23"/>
+  <CRTaxPaymentFifthRow Header="2.24"/>
+  <CRTaxPaymentSixthRow Header="2.25"/>
+  <CRTaxPaymentSeventhRow Header="2.26"/>
+  <CRTaxPaymentTotal Header="Total income (Line 2.19)"/>
+  <CRTaxPaymentIncome Header="Income tax liability"/>
+  <CRTaxPaymentDeduced Header="Tax deducted/Collected at source"/>
+  <CRTaxPaymentAdvanceHeader Header="Advance tax"/>
+  <CRTaxPaymentAdjustment Header="Adjustment of tax refund (if any)"/>
+  <CRTaxPaymentNet Header="Net tax payable {Line 2.21-(2.22+2.23+2.24)}"/>
+  <CRTaxPaymentTax Header="Tax payment (As per line 2.25)"/>
+  <CRParticularsIncome Header="Particulars of Income/Expenses"/>
+  <CRParticularsCurrent Header="Current Year"/>
+  <CRParticularsPrevious Header="Previous Year"/>
+  <CRParticularsFirstRow Header="2.27"/>
+  <CRParticularsSecondRow Header="2.28"/>
+  <CRParticularsThirdRow Header="2.29"/>
+  <CRParticularsFourthRow Header="2.30"/>
+  <CRParticularsFifthRow Header="2.31"/>
+  <CRParticularsSixthRow Header="2.32"/>
+  <CRParticularsSeventhRow Header="2.33"/>
+  <CRParticularsEigthRow Header="2.34"/>
+  <CRParticularsNinthRow Header="2.35"/>
+  <CRParticularsTenthRow Header="2.36"/>
+  <CRParticularsEleventhRow Header="2.37"/>
+  <CRParticularsSales Header="Sales/Turnover/Receipts Less : Vat (if any) Net Sales"/>
+  <CRParticularsCost Header="Cost of Sales"/>
+  <CRParticularsGross Header="Gross Profit (Line 2.27-2.28)"/>
+  <CRParticularsOther Header="Other Operating Income"/>
+  <CRParticularsAdmin Header="Administrative Expenses"/>
+  <CRParticularsSelling Header="Selling and Marketing Expenses"/>
+  <CRPartcularsOtherOpe Header="Other Operating Expenses"/>
+  <CRParticularsProfit Header="Profit from Operations {Line 2.29+2.30-2.31+2.32+2.33}"/>
+  <CRParticularsFinancial Header="Financial Expenses"/>
+  <CRParticularsIncomeFrom Header="Income from Associates/Subsidiaries"/>
+  <CRParticularsProfitBefore Header="Profit before Tax (Line 2.34+2.36-2.35)"/>
+  <CRParticularsBalance Header="Particulars of Balance Sheet"/>
+  <CRParticularsBalanceAsset Header="Assets"/>
+  <CRParticularsBalanceFirstRow Header="2.38"/>
+  <CRParticularsBalanceSecondRow Header="2.39"/>
+  <CRParticularsBalanceThirdRow Header="2.40"/>
+  <CRParticularsBalanceFourthRow Header="2.41"/>
+  <CRParticularsBalanceFifthRow Header="2.42"/>
+  <CRParticularsBalanceSixthRow Header="2.43"/>
+  <CRParticularsBalanceSeventhRow Header="2.44"/>
+  <CRParticularsBalanceEightRow Header="2.45"/>
+  <CRParticularsBalanceNinthRow Header="2.46"/>
+  <CRParticularsBalanceTenthRow Header="2.47"/>
+  <CRParticularsBalanceEleventhRow Header="2.48"/>
+  <CRParticularsBalanceTwelveRow Header="2.49"/>
+  <CRParticularsBalanceThirteenRow Header="2.50"/>
+  <CRParticularsBalanceFourteenRow Header="2.51"/>
+  <CRParticularsBalanceFifteenRow Header="2.52"/>
+  <CRParticularsBalanceSixteenRow Header="2.53"/>
+  <CRParticularsBalanceSeventeenRow Header="2.54"/>
+  <CRParticularsBalanceEighteenRow Header="2.55"/>
+  <CRParticularsBalanceNineteenRow Header="2.56"/>
+  <CRParticularsBalanceTwentyRow Header="2.57"/>
+  <CRParticularsBalanceTwentyoneRow Header="2.58"/>
+  <CRParticularsBalanceTwentytwoRow Header="2.59"/>
+  <CRParticularsBalanceTwentythreeRow Header="2.60"/>
+  <CRParticularsBalanceTwentyfourRow Header="2.61"/>
+  <CRParticularsBalanceTwentyfiveRow Header="2.62"/>
+  <CRParticularsBalanceTwentysixRow Header="2.63"/>
+  <CRParticularsBalanceTwentysevenRow Header="2.64"/>
+  <CRParticularsBalancePlant Header="Property, plant and equipment"/>
+  <CRParticularsBalanceGood Header="Goodwill"/>
+  <CRParticularsBalanceManufacturing Header="Manufacturing license/Patent right/Franchise fee"/>
+  <CRParticularsBalanceAssociate Header="Investments in associate/Subsidiary company"/>
+  <CRParticularsBalanceOtherFinancial Header="Other financial assets"/>
+  <CRParticularsBalanceTotalNon Header="Total Non-Current Assets :"/>
+  <CRParticularsBalanceTotalNon1 Header="(Line 2.38+2.39+2.40+2.41+2.42)"/>
+  <CRParticularsBalanceInvent Header="Inventories"/>
+  <CRParticularsBalanceTrade Header="Trade and other receivables"/>
+  <CRParticularsBalanceAdvance Header="Advance, Deposits and Prepayments"/>
+  <CRParticularsBalanceCash Header="Cash/Bank and cash equivalents"/>
+  <CRParticularsBalanceOther Header="Other"/>
+  <CRParticularsBalanceTotalCurrent Header="Total current assets"/>
+  <CRParticularsBalanceTotalCurrent1 Header="(Line 2.44+2.45+2.46+2.47+2.48)"/>
+  <CRParticularsBalanceTotalAssets Header="Total Assets"/>
+  <CRParticularsBalanceTotalAssets1 Header="(Line 2.43+2.49)"/>
+  <CRParticularsBalanceEquity Header="Equity and Liabilities"/>
+  <CRParticularsBalancePaid Header="Paid-up capital"/>
+  <CRParticularsBalanceReserves Header="Reserves and Surplus"/>
+  <CRParticularsBalanceRetained Header="Retained earnings"/>
+  <CRParticularsBalanceTotalEquity Header="Total equity capital"/>
+  <CRParticularsBalanceTotalEquity1 Header="(Line 2.51+2.52+2.53)"/>
+  <CRParticularsBalanceBonds Header="Bonds/Debentures"/>
+  <CRParticularsBalanceLong Header="Long term borrowings"/>
+  <CRParticularsBalanceOthers Header="Others"/>
+  <CRParticularsBalanceTotalLiabilities Header="Total Non-current liabilities" />
+  <CRParticularsBalanceTotalLiabilities1 Header="(Line 2.55+2.56+2.57)" />
+  <CRParticularsBalanceShort Header="Short term borrowings"/>
+  <CRParticularsBalanceCreditors Header="Creditors/Payables"/>
+  <CRParticularsBalanceProvisions Header="Provisions"/>
+  <CRParticularsBalanceOthers1 Header="Others"/>
+  <CRParticularsBalanceTotalCurrentLiabilities Header="Total Current liabilities"/>
+  <CRParticularsBalanceTotalCurrentLiabilities1 Header="(Line 2.59+2.60+2.61+2.62)"/>
+  <CRParticularsBalanceTotalEquityAndLia Header="Total Equity and Liabilities"/>
+  <CRParticularsBalanceTotalEquityAndLia1 Header="(Line 2.54+2.58+2.63)"/>
+  <CRParticularsShareholder Header="Particulars of Shareholder directors of the company"/>
+  <CRParticularsShareholderNo Header="No"/>
+  <CRParticularsShareholderName Header="Name"/>
+  <CRParticularsShareholderAddress Header="Address"/>
+  <CRParticularsShareholderNoShares Header="No. of Shares"/>
+  <CRParticularsShareholderTIN Header="TIN/UTIN"/>
+  <CRParticularsShareholderFirstRow Header="1"/>
+  <CRParticularsShareholderSecondRow Header="2"/>
+  <CRParticularsShareholderThirdRow Header="3"/>
+  <CRParticularsShareholderFourthRow Header="4"/>
+  <CRParticularsShareholderFifthRow Header="5"/>
+  <CRParticularsShareholderSixthRow Header="6"/>
+  <CRStateWithholding Header="Statement of Withholding taxes"/>
+  <CRStateWithholdingHead Header="Heads of Expenses"/>
+  <CRStateWithholdingClaimed Header="Expenses Claimed"/>
+  <CRStateWithholdingDeduced Header="Tax Deduced at source"/>
+  <CRStateWithholdingFirstRow Header="1"/>
+  <CRStateWithholdingSecondRow Header="2"/>
+  <CRStateWithholdingThirdRow Header="3"/>
+  <CRStateWithholdingFourthRow Header="4"/>
+  <CRStateWithholdingFifthRow Header="5"/>
+  <CRStateWithholdingSixthRow Header="6"/>
+  <CRStateWithholdingSeventhRow Header="7"/>
+  <CRStateWithholdingEigthRow Header="8"/>
+  <CRStateWithholdingNinthRow Header="9"/>
+  <CRStateWithholdingTenthRow Header="10"/>
+  <CRStateWithholdingSalary Header="Salaries"/>
+  <CRStateWithholdingContractors Header="Contractors/Suppliers"/>
+  <CRStateWithholdingFees Header="Fees for Professional, technical services"/>
+  <CRStateWithholdingHouse Header="House Rent"/>
+  <CRStateWithholdingCommission Header="Commission, discount or fees"/>
+  <CRStateWithholdingSavings Header="Savings deposits and fixed deposits"/>
+  <CRStateWithholdingInsurance Header="Insurance commission"/>
+  <CRStateWithholdingDividend  Header="Dividend"/>
+  <CRStateWithholdingForeign Header="Foreign Buyer Commission"/>
+  <CRStateWithholdingPayment Header="Payment to non-residents etc"/>
+  <CRParticularsBank Header="Particulars of Bank Accounts"/>
+  <CRParticularsBankName Header="Name of the Bank"/>
+  <CRParticularsBankBranch Header="Branch"/>
+  <CRParticularsBankAccount Header="Account number"/>
+  <CRParticularsBankRemarks Header="Remarks"/>
+  <CRRelated Header="Particulars of Related Parties/Subsidiary and Associated Companies/Directors/Managers"/>
+  <CRRelatedName Header="Name of the Company/Directors/Managers"/>
+  <CRRelatedTIN Header="TIN/Zone"/>
+  <CRRelatedHeld Header="% held in paid up capital"/>
+  <CRRelatedNamesOf Header="Names of common directors or major share holders"/>
+  <CRRelatedFinancial Header="Any financial/business Transactions held Yes/No"/>
+  </TaxSolution>

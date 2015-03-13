@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TaxSolution>
+  <ApplicationName Header="Tax Solution" />
+  
+  <!-- Choose language window -->
+  <ChooseLanguageWindowTitle Header="Choose Language" />
+  <LanguageListGroupBox Header="Language" />
+  <StartAppButton Header="Start Application" />
+  <ExitButton Header="Exit" />
+</TaxSolution>

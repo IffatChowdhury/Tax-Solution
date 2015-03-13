@@ -1,0 +1,515 @@
+﻿<Window x:Class="TaxSolution.PRSummary"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=PRSummaryTitle/@Header}" Height="600" Width="800" MinHeight="600" MinWidth="750" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" Style="{StaticResource TSFontStyle}" Icon="/TaxSolution;component/taxsolution.ico" ResizeMode="CanMinimize" WindowState="Maximized" AllowsTransparency="False" ShowInTaskbar="False" xmlns:my="clr-namespace:TaxSolution" Loaded="Window_Loaded" Background="#D1D3D4">
+    <Window.Resources>
+        <my:TaxDBDataSet x:Key="taxDBDataSet" />
+        <CollectionViewSource x:Key="customerViewSource" Source="{Binding Path=customer, Source={StaticResource taxDBDataSet}}" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <DockPanel Name="topborderred" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+            <DockPanel Name="logocontainer" ToolTip="{Binding Source={StaticResource Lang}, XPath=ApplicationName/@Header}" Style="{StaticResource TSLogoContainer}">
+                <Image Name="logo" Source="/TaxSolution;component/TAX-Solution-Logo.png" Style="{StaticResource TSLogoImage}" />
+                <Image Name="formimg" Source="/TaxSolution;component/Images/individual-return.png" Style="{StaticResource TSFormImage}" />
+            </DockPanel>
+            <DockPanel Name="topborderred2" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+        </StackPanel>
+        <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=PRSummaryTitle/@Header}" Style="{StaticResource TSFormTitleFull}" />
+        <WrapPanel Style="{StaticResource TSBodyTopNav}">
+            <Image Source="/TaxSolution;component/Images/print-1.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="printBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/close.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="closeBtn_Click"/>
+        </WrapPanel>
+        <ScrollViewer  Style="{StaticResource TSBodyScrollerFull}" Name="scrollViewer1">
+            <ScrollViewer.Background>
+                <ImageBrush ImageSource="/TaxSolution;component/Images/background.png" />
+            </ScrollViewer.Background>
+            <WrapPanel Name="MyPanel" HorizontalAlignment="Center">
+                <FlowDocumentReader Style="{StaticResource doc-reader}">
+                    <FlowDocument Style="{StaticResource doc-font-arial}" Name="summaryprint">
+                        <Section>
+                            <Paragraph TextAlignment="Center">
+                                <Image Source="/TaxSolution;component/TAX-Solution-Logo.png" Style="{StaticResource TSLogoImage}" />
+                            </Paragraph>
+                            <Paragraph FontWeight="Bold" TextAlignment="Center" FontSize="28" BorderBrush="Black" BorderThickness="0,0,0,1">
+                                Tax Computation
+                            </Paragraph>
+                            <Paragraph Margin="0,3,0,0">
+                                Name of Assessee:
+                                <TextBlock Name="noa"></TextBlock>
+                            </Paragraph>
+                            <Paragraph Margin="0,3,0,0">
+                                Assessment Year:
+                                <TextBlock Name="ay"></TextBlock>
+                            </Paragraph>
+                            <Paragraph Margin="0,3,0,0">
+                                TIN:
+                                <TextBlock Name="tin"></TextBlock>
+                            </Paragraph>
+                            <Paragraph Margin="0,10,0,0" FontWeight="Bold" FontSize="16">
+                                A. Taxable Income:
+                            </Paragraph>
+                            <Table BorderBrush="Black" BorderThickness=".5" CellSpacing="0">
+                                <Table.Columns>
+                                    <TableColumn Width="30"></TableColumn>
+                                    <TableColumn></TableColumn>
+                                    <TableColumn Width="100"></TableColumn>
+                                    <TableColumn Width="100"></TableColumn>
+                                    <TableColumn Width="100"></TableColumn>
+                                </Table.Columns>
+                                <TableRowGroup>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5" ColumnSpan="2">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Heads of Income</Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Income</Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Exemption</Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Taxable Income</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                1.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Salaries
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary1a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary1b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary1c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                2.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Interest on securities
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary2a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary2b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary2c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                3.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Income from house proeprty
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary3a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary3b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary3c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                4.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Agricultural income
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary4a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary4b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary4c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                5.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Income from business or profession
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary5a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary5b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary5c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                6.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Share of profit in a firm
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary6a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary6b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary6c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                7.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Income of the spouse or minor child
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary7a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary7b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary7c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                8.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Capital Gains
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary8a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary8b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary8c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                9.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Income from other source
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary9a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary9b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary9c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+                                                10.
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3">
+                                                Foreign income
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary10a">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary10b">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summary10c">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Margin="5,0,0,0">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Left" Padding="3" FontWeight="Bold">
+                                                Total (Serial 1 to 10)
+                                            </Paragraph>
+                                        </TableCell>
+                                        <!--<TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summaryta" FontWeight="Bold">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summarytb" FontWeight="Bold">
+
+                                            </Paragraph>
+                                        </TableCell>-->
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph TextAlignment="Right" Padding="3" Name="summarytc" FontWeight="Bold">
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                </TableRowGroup>
+                            </Table>
+
+                            <Paragraph Margin="0,10,0,0" FontWeight="Bold" FontSize="16">
+                                B. Tax Calculation Proceeds as Follows:
+                            </Paragraph>
+                            <Table BorderBrush="Black" BorderThickness=".5" CellSpacing="0" Name="taxcalc">
+                                <Table.Columns>
+                                    <TableColumn></TableColumn>
+                                    <TableColumn Width="150"></TableColumn>
+                                    <TableColumn Width="150"></TableColumn>
+                                    <TableColumn Width="150"></TableColumn>
+                                </Table.Columns>
+                                <TableRowGroup>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3"></Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Income</Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Tax Rate</Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Tax</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                </TableRowGroup>
+                            </Table>
+
+                            <Paragraph Margin="0,10,0,0" FontWeight="Bold" FontSize="16">
+                                C. Tax Payable:
+                            </Paragraph>
+                            <Table BorderBrush="Black" BorderThickness=".5" CellSpacing="0" Name="taxpayable">
+                                <Table.Columns>
+                                    <TableColumn></TableColumn>
+                                    <TableColumn Width="200"></TableColumn>
+                                    <TableColumn Width="200"></TableColumn>
+                                </Table.Columns>
+                                <TableRowGroup>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Particulars</Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Tk</Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph FontStyle="Italic" FontWeight="Bold" Padding="3">Tk</Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3">
+                                                Tax leviable on total income
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3" Name="taxpayablea">
+                                                
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3">
+                                                Less tax rebate u/s 44(2)(b)
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3" Name="taxpayableb">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3">
+                                                Tax payable
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3" Name="taxpayablec">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3">
+                                                Less tax paid at source/advance
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3" Name="taxpayabled">
+
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+
+                                        </TableCell>
+                                    </TableRow>
+                                    <TableRow>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3" FontWeight="Bold">
+                                                Tax payable with this return
+                                            </Paragraph>
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            
+                                        </TableCell>
+                                        <TableCell BorderBrush="Black" BorderThickness=".5">
+                                            <Paragraph Padding="3" Name="taxpayabletotal" FontWeight="Bold">
+
+                                            </Paragraph>
+
+                                        </TableCell>
+                                    </TableRow>
+                                </TableRowGroup>
+                            </Table>
+                        </Section>
+                    </FlowDocument>
+                </FlowDocumentReader>
+            </WrapPanel>
+        </ScrollViewer>
+        <WrapPanel Style="{StaticResource TSBodyBottomNav}">
+            <Image Source="/TaxSolution;component/Images/print-1.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="printBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/close.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="closeBtn_Click"/>
+        </WrapPanel>
+        <DockPanel Name="buttonsholder2" Style="{StaticResource TStopborderredbottom}">
+        </DockPanel>
+    </Grid>
+</Window>

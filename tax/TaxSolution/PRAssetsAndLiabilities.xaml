@@ -1,0 +1,230 @@
+﻿<Window x:Class="TaxSolution.PRAssetsAndLiabilities"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=PRAssetsAndLiabilitiesWindowTitle/@Header}" MinHeight="600" MinWidth="750" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterOwner" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="600" Width="800" Icon="/TaxSolution;component/taxsolution.ico" WindowState="Maximized" AllowsTransparency="False" ResizeMode="CanMinimize" xmlns:my="clr-namespace:TaxSolution" ShowInTaskbar="False" Loaded="Window_Loaded" Background="#D1D3D4">
+    <Window.Resources>
+        <my:TaxDBDataSet x:Key="taxDBDataSet" />
+        <CollectionViewSource x:Key="customerViewSource" Source="{Binding Path=customer, Source={StaticResource taxDBDataSet}}" />
+    </Window.Resources>
+    <Grid>
+        <StackPanel>
+            <DockPanel Name="topborderred" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+            <DockPanel Name="logocontainer" ToolTip="{Binding Source={StaticResource Lang}, XPath=ApplicationName/@Header}" Style="{StaticResource TSLogoContainer}">
+                <Image Name="logo" Source="/TaxSolution;component/TAX-Solution-Logo.png" Style="{StaticResource TSLogoImage}" />
+                <Image Name="formimg" Source="/TaxSolution;component/Images/individual-return.png" Style="{StaticResource TSFormImage}" />
+            </DockPanel>
+            <DockPanel Name="topborderred2" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+        </StackPanel>
+        <DockPanel Name="navigation" VerticalAlignment="Top" HorizontalAlignment="Left" Style="{StaticResource TSNavigationDock}">
+            <StackPanel>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="assesseeNav" Text="{Binding Source={StaticResource Lang}, XPath=PRAssesseeWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="salaryNav" Text="{Binding Source={StaticResource Lang}, XPath=PRSalaryWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="houseNav" Text="{Binding Source={StaticResource Lang}, XPath=PRHouseWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="investNav" Text="{Binding Source={StaticResource Lang}, XPath=PRInvestmentonTaxCredit/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="incomeNav" Text="{Binding Source={StaticResource Lang}, XPath=PRIncomeOfAssetsTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="it10bbNav" Text="{Binding Source={StaticResource Lang}, XPath=PRIT10-BBWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItemActive}" Name="it10bNav" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAndLiabilitiesWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+                <TextBlock Style="{StaticResource TSNavigationItem}" MouseEnter="navActivate" MouseLeave="navDiactivate" MouseDown="navClick" Name="documentNav" Text="{Binding Source={StaticResource Lang}, XPath=PRFurnishedDocumentWindowTitle/@Header}" TextWrapping="Wrap"></TextBlock>
+            </StackPanel>
+        </DockPanel>
+        <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAndLiabilitiesWindowTitle/@Header}" Style="{StaticResource TSFormTitle}" />
+        <WrapPanel Style="{StaticResource TSBodyTopNav}">
+            <Image Source="/TaxSolution;component/Images/previous.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="PrevBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/next.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="NextBtn_Click"/>
+        </WrapPanel>
+        <ScrollViewer  Style="{StaticResource TSBodyScroller}" Name="scrollViewer1">
+            <ScrollViewer.Background>
+                <ImageBrush ImageSource="/TaxSolution;component/Images/background.png" />
+            </ScrollViewer.Background>
+            <WrapPanel Name="MyPanel" HorizontalAlignment="Center">
+                <StackPanel Height="Auto" HorizontalAlignment="Stretch" Name="stackPanel1" VerticalAlignment="Top" MinHeight="100" Width="761">
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsBusinessCapitalDirectorsShareholdingsTitle/@Header}" Height="Auto" Name="expander1" Style="{StaticResource TSExpanderPadding}">
+                        <StackPanel>
+                            <Grid>
+                                <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsBusinessCapital/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label5" VerticalAlignment="Top" Width="245" />
+                                <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsDirectorsShareholdingsInLimitedCompanies/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,43,0,0" Name="label1" VerticalAlignment="Top" Width="316" />
+                                <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="BCDSbc" VerticalAlignment="Top" Width="160" />
+                                <TextBox Height="28" HorizontalAlignment="Left" Margin="379,43,0,0" MaxLength="100" Name="BCDSdsilc" VerticalAlignment="Top" Width="160" IsReadOnly="True" />
+                            </Grid>
+                            <Grid>
+                                <TextBox Name="BCDScount" Visibility="Hidden" IsEnabled="False" IsReadOnly="True" Text="0" />
+                                <StackPanel Name="BCDSitems">
+                                    <WrapPanel Name="BCDSlabel">
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsNameofCompanies/@Header}" Width="250" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsNumberofShares/@Header}" Width="120" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAmount/@Header}" Width="50" TextWrapping="Wrap"></TextBlock>
+                                        <Button Name="BCDSaddbtn" Style="{StaticResource TSButtonStyle}" Content="{Binding Source={StaticResource Lang}, XPath=PRAssesseeAddRow/@Header}" Click="BCDSaddbtn_Click" Height="25"></Button>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsNonAgriculturalPropertyTitle/@Header}" Height="Auto" Name="expander2" Style="{StaticResource TSExpanderPadding}">
+                        <StackPanel>
+                            <Grid >
+                                <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsNonAgriculturalProperty/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label6" VerticalAlignment="Top" Width="316" />
+                                <TextBox Height="28" HorizontalAlignment="Left" Margin="379,9,0,0" MaxLength="100" Name="NAPna" VerticalAlignment="Top" Width="160" IsReadOnly="True" />
+                            </Grid>
+                            <Grid>
+                                <TextBox Name="NAPcount" Visibility="Hidden" IsEnabled="False" IsReadOnly="True" Text="0" />
+                                <StackPanel Name="NAPitems">
+                                    <WrapPanel Name="NAPlabel">
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsNonAgriculturalLand/@Header}" Width="350" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAmount/@Header}" Width="50" TextWrapping="Wrap"></TextBlock>
+                                        <Button Name="NAPaddbtn" Style="{StaticResource TSButtonStyle}" Content="{Binding Source={StaticResource Lang}, XPath=PRAssesseeAddRow/@Header}" Click="NAPaddbtn_Click"></Button>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsAgriculturalPropertyTitle/@Header}" Height="Auto" Name="expander3" Style="{StaticResource TSExpanderPadding}">
+                        <StackPanel>
+                            <Grid >
+                                <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsAgriculturalProperty/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label7" VerticalAlignment="Top" Width="316" />
+                                <TextBox Height="28" HorizontalAlignment="Left" Margin="379,12,0,0" MaxLength="100" Name="APp" VerticalAlignment="Top" Width="160" IsReadOnly="True" />
+                            </Grid>
+                            <Grid>
+                                <TextBox Name="APcount" Visibility="Hidden" IsEnabled="False" IsReadOnly="True" Text="0" />
+                                <StackPanel Name="APitems">
+                                    <WrapPanel Name="APlabel">
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAgriculturalLand/@Header}" Width="350" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAmount/@Header}" Width="50" TextWrapping="Wrap"></TextBlock>
+                                        <Button Name="APaddbtn" Style="{StaticResource TSButtonStyle}" Content="{Binding Source={StaticResource Lang}, XPath=PRAssesseeAddRow/@Header}" Click="APaddbtn_Click"></Button>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsInvestmentsTitle/@Header}" Height="Auto" Name="expander4" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsShares/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label8" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsSavingCertificate/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,43,0,0" Name="label9" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsPrizeBond/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,76,0,0" Name="label10" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsLoansGiven/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,109,0,0" Name="label11" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsOtherInvestment/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,142,0,0" Name="label12" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="Is" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,43,0,0" MaxLength="100" Name="Isc" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,76,0,0" MaxLength="100" Name="Ipb" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,109,0,0" MaxLength="100" Name="Ilg" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Right" Margin="0,142,220,0" MaxLength="100" Name="Ioi" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsMotorVehiclesTitle/@Header}" Height="Auto" Name="expander5" Style="{StaticResource TSExpanderPadding}">
+                        <StackPanel>
+                            <Grid>
+                                <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsAnyOtherTotal/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label13" VerticalAlignment="Top" Width="245" />
+                                <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="AMVmv" VerticalAlignment="Top" Width="160" IsReadOnly="True" />
+                            </Grid>
+                            <Grid>
+                                <TextBox Name="AMVcount" Visibility="Hidden" IsEnabled="False" IsReadOnly="True" Text="0" />
+                                <StackPanel Name="AMVitems">
+                                    <WrapPanel Name="AMVlabel">
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsTypeOfMotor/@Header}" Width="350" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAmount/@Header}" Width="50" TextWrapping="Wrap"></TextBlock>
+                                        <Button Name="AMVaddbtn" Style="{StaticResource TSButtonStyle}" Content="{Binding Source={StaticResource Lang}, XPath=PRAssesseeAddRow/@Header}" Click="AMVaddbtn_Click"></Button>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsJewelleryTitle/@Header}" Height="Auto" Name="expander6" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsJewellery/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label14" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="AJj" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,44,0,0" MaxLength="100" Name="AJjc" VerticalAlignment="Top" Width="160" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsJewelleryCost/@Header}" Height="28" Name="labelj14" Width="245" Margin="10,44,504,0" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsFurnitureTitle/@Header}" Height="Auto" Name="expander7" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsFurniture/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label15" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="AFf" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsElectronicTitle/@Header}" Height="Auto" Name="expander8" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsElectronic/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label16" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="AEe" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsCashTitle/@Header}" Height="Auto" Name="expander9" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsCashInHand/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label17" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsCashInBank/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,43,0,0" Name="label18" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsOtherDeposits/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,76,0,0" Name="label19" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,12,0,0" MaxLength="100" Name="ACih" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,43,0,0" MaxLength="100" Name="ACib" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,76,0,0" MaxLength="100" Name="ACod" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsAnyOtherTitle/@Header}" Height="Auto" Name="expander10" Style="{StaticResource TSExpanderPadding}">
+                        <StackPanel>
+                            <Grid>
+                                <TextBlock Margin="10,12,0,0" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAnyOtherTotal/@Header}" Height="28" VerticalAlignment="Top" />
+                                <TextBox Height="28" HorizontalAlignment="Left" Margin="379,12,0,0" MaxLength="100" Name="AOa" VerticalAlignment="Top" Width="160" IsReadOnly="True" />
+                            </Grid>
+                            <Grid>
+                                <TextBox Name="AOAcount" Visibility="Hidden" IsEnabled="False" IsReadOnly="True" Text="0" />
+                                <StackPanel Name="AOAitems">
+                                    <WrapPanel Name="AOAlabel">
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAnyOtherDetail/@Header}" Width="350" TextWrapping="Wrap"></TextBlock>
+                                        <TextBlock Margin="10" FontWeight="Bold" Text="{Binding Source={StaticResource Lang}, XPath=PRAssetsAmount/@Header}" Width="50" TextWrapping="Wrap"></TextBlock>
+                                        <Button Name="AOAaddbtn" Style="{StaticResource TSButtonStyle}" Content="{Binding Source={StaticResource Lang}, XPath=PRAssesseeAddRow/@Header}" Click="AOAaddbtn_Click"></Button>
+                                    </WrapPanel>
+                                </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsLessLiabilitiesTitle/@Header}" Height="Auto" Name="expander11" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsMortgages/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label20" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsUnsecuredLoans/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,43,0,0" Name="label21" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsBankLoan/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,76,0,0" Name="label22" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsOthers/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,109,0,0" Name="label23" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="LLm" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,45,0,0" MaxLength="100" Name="LLul" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,77,0,0" MaxLength="100" Name="LLbl" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,109,0,0" MaxLength="100" Name="LLo" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsNetWealthTitle/@Header}" Height="Auto" Name="expander12" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsNetWealth/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label24" VerticalAlignment="Top" Width="301" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="ANWldopiy" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsFamiltyExpenditureTitle/@Header}" Height="Auto" Name="expander13" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsFamiltyExpenditure/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label25" VerticalAlignment="Top" Width="336" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsNoOfChildren/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,43,0,0" Name="label26" VerticalAlignment="Top" Width="316" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsAdult/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,76,0,0" Name="label27" VerticalAlignment="Top" Width="245" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsChild/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,109,0,0" Name="label28" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="FEt" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,43,0,0" MaxLength="100" Name="FEnoc" VerticalAlignment="Top" Width="160" IsReadOnly="True" Visibility="Hidden" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,76,0,0" MaxLength="100" Name="FEa" VerticalAlignment="Top" Width="160" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,109,0,0" MaxLength="100" Name="FEc" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                    <Expander Header="{Binding Source={StaticResource Lang}, XPath=PRAssetsSourceOfFundTitle/@Header}" Height="Auto" Name="expander14" Style="{StaticResource TSExpanderPadding}">
+                        <Grid>
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsShownReturnIncome/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,10,0,0" Name="label29" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,10,0,0" MaxLength="100" Name="SOFsri" VerticalAlignment="Top" Width="160" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsTaxExempted/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,43,0,0" Name="label30" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,43,0,0" MaxLength="100" Name="SOFte" VerticalAlignment="Top" Width="160" />
+                            <Label Content="{Binding Source={StaticResource Lang}, XPath=PRAssetsOtherReceipts/@Header}" Height="28" HorizontalAlignment="Left" Margin="10,76,0,0" Name="label31" VerticalAlignment="Top" Width="245" />
+                            <TextBox Height="28" HorizontalAlignment="Left" Margin="379,76,0,0" MaxLength="100" Name="SOFor" VerticalAlignment="Top" Width="160" />
+                        </Grid>
+                    </Expander>
+                </StackPanel>
+            </WrapPanel>
+        </ScrollViewer>
+        <WrapPanel Style="{StaticResource TSBodyBottomNav}">
+            <Image Source="/TaxSolution;component/Images/previous.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="PrevBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/next.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="NextBtn_Click"/>
+        </WrapPanel>
+        <DockPanel Name="buttonsholder2" Style="{StaticResource TStopborderredbottom}">
+        </DockPanel>
+    </Grid>
+</Window>

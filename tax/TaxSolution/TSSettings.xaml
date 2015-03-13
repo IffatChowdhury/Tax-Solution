@@ -1,0 +1,97 @@
+﻿<Window x:Class="TaxSolution.TSSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=TSSettingsWindowTitle/@Header}" Height="500" Width="600" Icon="/TaxSolution;component/taxsolution.ico" ShowInTaskbar="False" ResizeMode="CanMinimize" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded" Background="#D1D3D4">
+    <Grid>
+        <StackPanel>
+            <DockPanel Name="topborderred" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+            <DockPanel Name="logocontainer" ToolTip="{Binding Source={StaticResource Lang}, XPath=ApplicationName/@Header}" Style="{StaticResource TSLogoContainer}">
+                <Image Name="logo" Source="/TaxSolution;component/TAX-Solution-Logo.png" Style="{StaticResource TSLogoImage}" />
+                <!--<Image Name="formimg" Source="/TaxSolution;component/Images/individual-return.png" Style="{StaticResource TSFormImage}" />-->
+            </DockPanel>
+            <DockPanel Name="topborderred2" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+        </StackPanel>
+        
+        <WrapPanel Style="{StaticResource TSBodyTopNav}">
+            <Image Source="/TaxSolution;component/Images/previous.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="closeBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/next.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="saveBtn_Click"/>
+        </WrapPanel>
+        <ScrollViewer  Style="{StaticResource TSBodyScrollerSmall}" Name="scrollViewer1">
+            <ScrollViewer.Background>
+                <ImageBrush ImageSource="/TaxSolution;component/Images/background.png" />
+            </ScrollViewer.Background>
+            <WrapPanel Name="MyPanel" HorizontalAlignment="Center">
+                <TabControl>
+                    <TabItem Header="Licensing">
+                        <Grid MinWidth="600">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Rectangle Fill="#9B9DA0" Grid.Row="0" Grid.Column="0" />
+                            <Rectangle Fill="#9B9DA0" Grid.Row="0" Grid.Column="1" />
+                            <Rectangle Fill="LightGoldenrodYellow" Grid.Row="1" Grid.Column="0" />
+                            <Rectangle Fill="LightGoldenrodYellow" Grid.Row="1" Grid.Column="1" />
+                            <Rectangle Fill="#9B9DA0" Grid.Row="2" Grid.Column="0" />
+                            <Rectangle Fill="#9B9DA0" Grid.Row="2" Grid.Column="1" />
+
+                            <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=TSSettingsLicenseStatus/@Header}" Margin="10" Grid.Row="0" Grid.Column="0" />
+                            <TextBlock Text="Demo" Margin="10" Grid.Row="0" Grid.Column="1" Name="licenseStatus" />
+
+                            <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=TSSettingsLicenseKey/@Header}" Margin="10" Grid.Row="1" Grid.Column="0" />
+                            <TextBox Text="Demo" Margin="10" Grid.Row="1" Grid.Column="1" Name="licenseKey" Width="350" HorizontalAlignment="Left" TextWrapping="Wrap" IsReadOnly="True" />
+
+                            <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=TSSettingsActivationKey/@Header}" Margin="10" Grid.Row="2" Grid.Column="0" />
+                            <TextBox Margin="10" Grid.Row="2" Grid.Column="1" Name="activationKey" Width="350" HorizontalAlignment="Left" />
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="User Management">
+                        <Grid MinWidth="600">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition></RowDefinition>
+                                <RowDefinition></RowDefinition>
+                            </Grid.RowDefinitions>
+                            <Rectangle Fill="#9B9DA0" Grid.Row="0" Grid.Column="0" />
+                            <Rectangle Fill="#9B9DA0" Grid.Row="0" Grid.Column="1" />
+                            <Rectangle Fill="LightGoldenrodYellow" Grid.Row="1" Grid.Column="0" />
+                            <Rectangle Fill="LightGoldenrodYellow" Grid.Row="1" Grid.Column="1" />
+
+                            <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=TSSettingsAdminPass/@Header}" Margin="10" Grid.Row="0" Grid.Column="0" />
+                            <PasswordBox Name="adminPass" Width="200" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Margin="10" Height="25" />
+
+                            <TextBlock Text="{Binding Source={StaticResource Lang}, XPath=TSSettingsSuperAdminPass/@Header}" Margin="10" Grid.Row="1" Grid.Column="0" />
+                            <PasswordBox Name="superAdminPass" Width="200" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Margin="10" Height="25" />
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="System Backup">
+                        <WrapPanel Width="580">
+                            <Button Content="{Binding Source={StaticResource Lang}, XPath=BackupButton/@Header}" Height="23" Name="backupBtn" Style="{StaticResource TSButtonStyle}" Width="120" Click="backupBtn_Click" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </WrapPanel>
+                    </TabItem>
+                </TabControl>
+            </WrapPanel>
+        </ScrollViewer>
+        <WrapPanel Style="{StaticResource TSBodyBottomNav}">
+            <Image Source="/TaxSolution;component/Images/previous.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="closeBtn_Click" />
+            <Image Source="/TaxSolution;component/Images/next.png" Margin="10,0" Stretch="None" HorizontalAlignment="Right" MouseDown="saveBtn_Click"/>
+        </WrapPanel>
+        <DockPanel Name="buttonsholder2" Style="{StaticResource TStopborderredbottom}">
+            <Border BorderBrush="Silver" BorderThickness="1" Height="Auto" Name="border2" Width="Auto" HorizontalAlignment="Stretch">
+                <WrapPanel HorizontalAlignment="Right" VerticalAlignment="Center" >
+                    <TextBlock Foreground="#FFFFFF" Text="Software developed by Mailmerge and Creash" Margin="0,0,10,0" />
+                </WrapPanel>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Window>

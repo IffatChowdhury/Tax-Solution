@@ -1,0 +1,22 @@
+﻿<Window x:Class="TaxSolution.StartPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=ChooseLanguageWindowTitle/@Header}" Height="250" Width="500" ResizeMode="NoResize" Icon="/TaxSolution;component/taxsolution.ico" Topmost="True" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" Style="{StaticResource TSFontStyle}">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <Grid Background="{x:Null}">
+
+        <DockPanel Height="100" Name="logocontainer" Width="Auto" ToolTip="{Binding Source={StaticResource Lang}, XPath=ApplicationName/@Header}" VerticalAlignment="Top">
+            <Image Height="Auto" Name="logo" Stretch="Uniform" Width="Auto" Source="/TaxSolution;component/TAX-Solution-Logo.png" />
+        </DockPanel>
+        <GroupBox Header="{Binding Source={StaticResource Lang}, XPath=LanguageListGroupBox/@Header}" Margin="83,111,221,25" Name="groupBox1">
+            <StackPanel Height="Auto" Name="languages" Width="Auto">
+                <RadioButton Content="English" Height="16" Name="englishRadio" Margin="10,10,0,0" IsChecked="True" />
+                <RadioButton Content="Bangla" Height="16" Name="banglaRadio" Margin="10,10,0,0" IsEnabled="False" />
+            </StackPanel>
+        </GroupBox>
+        <Button Content="{Binding Source={StaticResource Lang}, XPath=StartAppButton/@Header}" Height="23" HorizontalAlignment="Left" Margin="306,126,0,0" Name="startAppBtn" VerticalAlignment="Top" Width="123" Style="{StaticResource TSButtonStyle}" Click="startAppBtn_Click" />
+        <Button Content="{Binding Source={StaticResource Lang}, XPath=ExitButton/@Header}" Height="23" HorizontalAlignment="Left" Margin="306,158,0,0" Name="exitBtn" VerticalAlignment="Top" Width="123" Style="{StaticResource TSButtonStyle}" Click="exitBtn_Click" />
+    </Grid>
+</Window>

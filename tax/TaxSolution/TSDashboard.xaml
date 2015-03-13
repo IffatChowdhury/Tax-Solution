@@ -1,0 +1,57 @@
+﻿<Window x:Class="TaxSolution.TSDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{Binding Source={StaticResource Lang}, XPath=TSDashboardWindowTitle/@Header}" MinHeight="600" MinWidth="800" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Style="{StaticResource TSFontStyle}" AllowsTransparency="False" WindowStyle="SingleBorderWindow" WindowStartupLocation="CenterScreen" Icon="/TaxSolution;component/taxsolution.ico" Height="300" Width="650" WindowState="Maximized" ResizeMode="CanMinimize" Background="#D1D3D4">
+    <Grid>
+        <StackPanel>
+            <DockPanel Name="topborderred" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+            <DockPanel Name="logocontainer" ToolTip="{Binding Source={StaticResource Lang}, XPath=ApplicationName/@Header}" Style="{StaticResource TSLogoContainer}">
+                <Image Name="logo" Source="/TaxSolution;component/TAX-Solution-Logo.png" Style="{StaticResource TSLogoImage}" />
+            </DockPanel>
+            <DockPanel Name="topborderred2" Style="{StaticResource TStopborderred}">
+            </DockPanel>
+        </StackPanel>
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,150,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="250" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            
+            <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" Margin="20,0,0,0">
+                <Image MouseDown="tinBtn_Click" Source="/TaxSolution;component/Images/tin.png" Margin="10" Width="200" />
+                <Image MouseDown="personalReturn_Click" Source="/TaxSolution;component/Images/pr.png" Margin="10" Width="200" />
+                <!--<Image MouseDown="companyReturn_Click" Source="/TaxSolution;component/Images/cr.png" Margin="10" Width="200" />-->
+                <Image MouseDown="userListBtn_Click" Source="/TaxSolution;component/Images/cl.png" Margin="10" Width="200" />
+                <Image MouseDown="resourceBtn_Click" Source="/TaxSolution;component/Images/resources.png" Margin="10" Width="200" />
+                <Image MouseDown="openBtn_Click" Source="/TaxSolution;component/Images/open.png" Margin="10" Width="200" />
+            </StackPanel>
+            
+            <StackPanel Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+                <TextBlock FontFamily="Arial" TextWrapping="Wrap" FontWeight="Bold" FontSize="28" Text="Welcome to Tax Solution" TextAlignment="Center"></TextBlock>
+                <TextBlock FontFamily="Arial" TextWrapping="Wrap" FontWeight="Bold" FontSize="20" Text="Please click on preferred task" TextAlignment="Center"></TextBlock>
+            </StackPanel>
+            
+            <StackPanel Grid.Row="0" Grid.Column="2" HorizontalAlignment="Right" Margin="0,0,20,0">
+                <Border CornerRadius="5,5,0,0" Background="#696A6D" Width="200" Margin="0" BorderThickness="0">
+                    <Image Source="/TaxSolution;component/Images/tools.png" Width="70" Margin="10,5" HorizontalAlignment="Left" />
+                </Border>
+                <Border Margin="0" Width="200" MouseDown="settingsBtn_Click" Background="#9B9DA0" BorderThickness="0">
+                    <TextBlock Margin="10" Text="{Binding Source={StaticResource Lang}, XPath=TSDashboardSettingsButton/@Header}" />
+                </Border>
+                <Border Margin="0" Width="200" MouseDown="button2_Click" Background="#9B9DA0" BorderThickness="0">
+                    <TextBlock Margin="10" Text="{Binding Source={StaticResource Lang}, XPath=TSDashboardAboutUsButton/@Header}" />
+                </Border>
+                <Border Margin="0" Width="200" MouseDown="exitBtn_Click" Background="#9B9DA0" BorderThickness="0">
+                    <TextBlock Margin="10" Text="{Binding Source={StaticResource Lang}, XPath=TSDashboardExitButton/@Header}" />
+                </Border>
+            </StackPanel>
+        </Grid>
+        <DockPanel Name="buttonsholder2" Style="{StaticResource TStopborderredbottom}">
+        </DockPanel>
+    </Grid>
+</Window>
